@@ -14,7 +14,7 @@ This project has two raw data files at different scales from a study of infants,
 
 ###### Run Libraries
 
-```{r}
+```{r output = FALSE}
 library(tidyverse)
 library(here)
 ```
@@ -81,7 +81,7 @@ ppt_long <- ppt %>% pivot_longer(cols = starts_with("Seen"), names_to = "stim", 
 ppt_long <- ppt_long %>% separate(stim, into = c(NA, "stim"))
 ```
 
-Code stim and watched as factors
+Code stim and watched as factors.
 
 ```{r}
 ppt_long <- ppt_long %>% mutate(
@@ -108,7 +108,7 @@ ds %>% write_csv(here("data_cleaned","cleaned.csv"))
 
 Is the precision acceptable (\< 2.5) for each participant? Visualize the distribution of precision to see if there are values above 2.5.
 
-Create a summary to figure out which participants would we need to exclude if \> 2.5 meant the data are unuseable? Use a summary table and plots to investigate whether data equally precise for participants of different ages
+Create a summary to figure out which participants would we need to exclude if \> 2.5 meant the data are unusable? Use a summary table and plots to investigate whether data equally precise for participants of different ages
 
 Visualize the distribution of precision to see if there are values above 2.5
 
